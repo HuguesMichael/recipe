@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Recipes from differents country</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Sevillana&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+</head>
+
+<body>
+  <h1 class="libre-baskerville-bold">Chose the cuisne and country to see a recipes</h1>
+</div>
+<form id="myForm" method="post">
+  <label for="Cuisine" class="libre-baskerville-regular">Cuisine:</label>
+  <select name="cuisine" id="Idcuisine">
+    <option value="" selected> </option>
+    <option value="pasta">Pasta</option>
+</select>
+
+  <label for="Country" class="libre-baskerville-regular">country:</label>
+  <select name="country" id="IdCountry">
+    <option value="" selected> </option>
+    <option value="African">African</option>
+    <option value="Asian">Asian</option>
+    <option value="American">American</option>
+    <option value="British">British</option>
+    <option value="Chinese">Chinese</option>
+    <option value="European">European</option>
+    <option value="French">French</option>
+    <option value="German">German</option>
+    <option value="Indian">Indian</option>
+    <option value="Italian">Italian</option>
+    <option value="Japanese">Japanese</option>
+    <option value="Korean">Korean</option>
+    <option value="Mexican">Mexican</option>
+    <option value="Spanish">Spanish</option>
+    <option value="Vietnamese">Vietnamese</option>
+
+  </select>
+  <input id="post" type="submit" value="Submit"  formaction="/recipes" size="50px">
+</form>
+</div>
+<div class="gridContainer">
+<% if(locals.content){
+    locals.content.forEach(element => {%>
+            <div>
+            <h5 class="libre-baskerville-regular-italic"> <%= element.title%> </h5>
+            <a href="<%= element.image%>"> <img src="<%= element.image%>" alt="image for "+ <%= element.title%> class="card" ></a>
+            
+            </div>
+       
+        <% }); };%>
+ </div>
+  
+</body>
+
+</html>
